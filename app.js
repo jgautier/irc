@@ -84,8 +84,8 @@ io.sockets.on('connection', function(socket) {
                 channelName = commandData.command.replace('/join ', '');
                 client.join(channelName, function(nick, message) {
                     client.on('message' + channelName, function(nick, text) {
-                        console.log('new message '+channelName);
-                        socket.emit('message' +channelName, {nick:nick,text:text})
+                        console.log('new message ' + channelName);
+                        socket.emit('message' + channelName, {nick:nick,text:text})
                     });
                     socket.emit('joined', channelName);
                 });
@@ -96,9 +96,9 @@ io.sockets.on('connection', function(socket) {
                 client.say(commandData.source, commandData.command);
             }
         });
-        socket.on('part',function(room){
-           console.log(room);
-           client.part(room);
+        socket.on('part', function(room) {
+            console.log(room);
+            client.part(room);
         });
         socket.on('disconnect', function () {
             client.disconnect();
@@ -114,7 +114,7 @@ io.sockets.on('connection', function(socket) {
             socket.emit('channellist', channelList);
         });
         client.addListener('names', function(channel, nicks) {
-            socket.emit('nicks'+channel.toLowerCase(), nicks);
+            socket.emit('nicks' + channel.toLowerCase(), nicks);
         });
         client.addListener('error', function(raw) {
             console.log(raw);
