@@ -1,0 +1,25 @@
+{
+  "author": "Julian Gautier <julian.gautier@alumni.neumont.edu> (www.juliangautier.com)",
+  "name": "irc",
+  "description": "Node and Backbone IRC Client",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jgautier/irc.git"
+  },
+  "main": "app.js",
+  "engines": {
+    "node": "~0.6.2"
+  },
+  "dependencies": {
+      "backbone-browserify" : "0.5.x"
+     ,"browserify" : "1.7.x"
+     ,"connect" : "1.7.x"
+     ,"irc" : "0.3.x"
+     ,"jade" : "0.16.x"
+     ,"jquery-browserify" : "1.6.x"
+     ,"socket.io" : "0.8.x"
+     ,"socket.io-client" : "0.8.x"
+  },
+  "devDependencies": {}
+}
