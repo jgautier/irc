@@ -1,0 +1,1 @@
+IRC client with Node and Backbone.  Not done yet, come back later.
