@@ -1,8 +1,8 @@
 var $ = require('jquery')
     ,Backbone = require('backbone')
-    ,jadeify = require('../jadeify');
 module.exports = RoomView = Backbone.View.extend({
-    tagName : 'div'
+     template : require('../templates/ircpanel.jade')
+    ,tagName : 'div'
     ,className : 'room-view'
     ,events : {
         'keyup .main-input' : 'onMainInputKeyUp'
@@ -10,7 +10,7 @@ module.exports = RoomView = Backbone.View.extend({
     ,initialize : function(name, nickName, socket) {
         var self = this;
         this.socket = socket;
-        this.el.innerHTML = jadeify('ircpanel', {sideBarHeader: 'Users',mainHeader: name});
+        this.el.innerHTML = this.template({sideBarHeader: 'Users',mainHeader: name});
         this.el.id = name.replace('#', '');
         this.id = name;
         this.nickName = nickName;

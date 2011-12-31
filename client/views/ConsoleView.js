@@ -1,17 +1,16 @@
 var $ = require('jquery')
-    ,Backbone = require('backbone')
-    ,modal = require('../bootstrap/modal').modal
-    ,jadeify = require('../jadeify');
-module.exports = ConsoleView = Backbone.View.extend({
-    tagName : 'div'
+    ,Backbone = require('backbone');
+module.exports = Backbone.View.extend({
+     template : require('../templates/ircpanel.jade')
+    ,tagName : 'div'
     ,id : 'console'
     ,className : 'room-view'
     ,events : {
         'keyup .main-input' : 'onMainInputKeyUp'
-    }
+    } 
     ,initialize : function(socket) {
         this.socket = socket;
-        this.el.innerHTML = jadeify('ircpanel', {sideBarHeader: 'Channel List',mainHeader:'Console'});
+        this.el.innerHTML = this.template({sideBarHeader: 'Channel List',mainHeader:'Console'});
         this.bind('notice', this.onNotice);
         this.bind('motd', this.onMotd);
         this.bind('channellist', this.onChannelList)

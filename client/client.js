@@ -1,7 +1,6 @@
 var $ = require('jquery');
 window.jQuery = $;
 var Backbone = require('backbone')
-    ,jadeify = require('./jadeify')
     ,LoginView = require('./views/LoginView')
     ,ConsoleView = require('./views/ConsoleView')
     ,io = window.io
@@ -12,7 +11,7 @@ $(document).ready(function() {
         el : 'body'
         ,login : new LoginView()
         ,console : new ConsoleView(socket)
-        ,topbar : $(jadeify('topbar'))
+        ,topbar : require('./templates/topbar.jade')
         ,events : {
             'click .nav li a' : 'switchChannel'
         }

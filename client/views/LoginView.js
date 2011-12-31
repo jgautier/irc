@@ -1,15 +1,15 @@
 var $ = require('jquery')
     ,Backbone = require('backbone')
-    ,modal = require('../bootstrap/modal').modal
-    ,jadeify = require('../jadeify');
+    ,modal = require('../bootstrap/modal').modal;
 modal($);
 module.exports = LoginView = Backbone.View.extend({
     el : 'body'
-    ,login : $(jadeify('modals/login'))
+    ,template : require('../templates/modals/login.jade')
     ,events : {
         'click #logOn' : 'logOn'
     }
     ,initialize : function() {
+        this.login = $(this.template());
         this.login.modal({
             show : true
             ,backdrop : 'static'

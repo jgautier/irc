@@ -13,13 +13,14 @@
   },
   "dependencies": {
       "backbone-browserify" : "0.5.x"
-     ,"browserify" : "1.7.x"
-     ,"connect" : "1.7.x"
+     ,"browserify" : "1.8.x"
+     ,"connect" : "1.8.x"
      ,"irc" : "0.3.x"
      ,"jade" : "0.16.x"
      ,"jquery-browserify" : "1.6.x"
      ,"socket.io" : "0.8.x"
      ,"socket.io-client" : "0.8.x"
+     ,"require-jade" : "0.0.x"
   },
   "devDependencies": {}
 }
